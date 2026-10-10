@@ -37,7 +37,9 @@
         radial-gradient(ellipse at top, var(--purple-mist) 0%, var(--bg-deep) 55%),
         var(--bg-deep);
       color: var(--text);
-      font-family: Georgia, 'Times New Roman', serif;
+      /* Uygulama icindeki analiz sonucu metniyle ayni: varsayilan sans-serif
+         (Flutter'da Roboto). Serif font mobilde okunaksiz gorunuyordu. */
+      font-family: Roboto, system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
       padding: 24px 16px 64px;
       padding-top: max(24px, env(safe-area-inset-top));
@@ -116,6 +118,7 @@
       color: var(--text-soft);
       font-size: 17px;
       font-style: italic;
+      font-family: Roboto, system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     }
     .divider {
       width: 60px;
@@ -132,10 +135,21 @@
       white-space: pre-wrap;
       font-size: 18px;
       line-height: 1.85;
+      /* Uygulamadaki analiz sonucu metin rengiyle birebir ayni. */
       color: #d6d3de;
       letter-spacing: 0.3px;
       font-weight: 500;
       text-align: justify;
+      font-family: Roboto, system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+    /* Uygulamada markdown basliklari ve vurgulu metinler altin tonunda. */
+    #yorum strong, #yorum b {
+      color: #ffeaa7;
+      font-weight: 700;
+    }
+    #yorum h2, #yorum h3 {
+      color: #ffd700;
+      font-weight: 700;
     }
     #yorum:empty::before,
     .loading::before {
